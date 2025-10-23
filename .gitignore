@@ -1,15 +1,17 @@
+# Archivos/Directorios de Android Studio y IDE
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
 .DS_Store
+/local.properties
+/.idea/
+
+# Directorios Generados y Cache
+/.gradle
 /build
 /captures
-.externalNativeBuild
-.cxx
-local.properties
+
+# Archivos de build nativo (si usas NDK/C++)
+.cxx/
+.externalNativeBuild/
+
+# Llaves privadas/Debug/Otros
+# my-key.jks
