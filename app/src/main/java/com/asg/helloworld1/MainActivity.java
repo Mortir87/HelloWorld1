@@ -4,6 +4,11 @@ import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.View;
+import android.widget.Toast;
+
+import com.google.android.material.button.MaterialButton;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,13 +17,15 @@ import java.sql.Statement;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    MaterialButton ejemplBotton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        connectarConMySQL();
+        connectarConMySQL();;
+
     }
 
     private void connectarConMySQL() {
@@ -26,24 +33,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    Connection conex = ConexBBDD.getConnection();
+                    Connection conex = ConexBBDD1.getConnection();
 
                     if (conex != null) {
                         Log.d(TAG, "¡Conexión a la base de datos exitosa!");
 
                         Statement statement = conex.createStatement();
+
+                        //Probamos escritura en bbdd
+                        String insertPrueba = "INSERT INTO alumnos (nombre, apellido) VALUES ('Juan', 'Perez')";
+
+                        int celdasAfectadas = statement.executeUpdate(insertPrueba);
+                        Log.d(TAG, "INSERT correcto. Filas afectadas: " + celdasAfectadas); // != 1 es error.
+
+                        //Probamos lectura
                         ResultSet resultSet = statement.executeQuery("SELECT nombre, apellido FROM alumnos");
 
-                        // Usamos un if para asegurarnos de que hay al menos un resultado
                         if (resultSet.next()) {
                             String nombre = resultSet.getString("nombre");
                             String apellido = resultSet.getString("apellido");
-                            Log.d(TAG, "Alumno: " + nombre + " " + apellido);
+                            Log.d(TAG, "Lectura correcta - Alumno: " + nombre + " " + apellido);
                         } else {
                             Log.d(TAG, "No se encontraron registros en la tabla 'alumnos'.");
                         }
 
-                        //Cerrar los recursos
+                        //CERRAR RECURSOS
                         resultSet.close();
                         statement.close();
                         conex.close();

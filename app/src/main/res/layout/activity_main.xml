@@ -23,8 +23,25 @@
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/BotonCliente"
+        android:layout_width="179dp"
+        android:layout_height="53dp"
+        android:text="@string/BotonCliente"
+        android:textColor="@color/white"
+        app:backgroundTint="?attr/colorPrimary"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/baseline_celebration_24"
+        app:iconPadding="2dp"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="103dp"
+        tools:ignore="MissingConstraints" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
