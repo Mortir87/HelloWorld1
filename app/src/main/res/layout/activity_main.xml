@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#8BC34A"
+        android:background="#009688"
         android:fontFamily="cursive"
         android:padding="16sp"
         android:paddingStart="16sp"
@@ -20,28 +20,29 @@
         android:paddingRight="16sp"
         android:paddingBottom="16sp"
         android:text="@string/HolaMundo"
+        android:textColor="@color/white"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279" />
+        app:layout_constraintVertical_bias="0.546" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/BotonCliente"
         android:layout_width="179dp"
         android:layout_height="53dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="196dp"
         android:text="@string/BotonCliente"
         android:textColor="@color/white"
-        app:backgroundTint="?attr/colorPrimary"
+        app:backgroundTint="#009688"
         app:cornerRadius="12dp"
         app:icon="@drawable/baseline_celebration_24"
         app:iconPadding="2dp"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="103dp"
-        tools:ignore="MissingConstraints" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
