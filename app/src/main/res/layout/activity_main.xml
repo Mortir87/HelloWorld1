@@ -41,6 +41,7 @@
         app:cornerRadius="12dp"
         app:icon="@drawable/baseline_celebration_24"
         app:iconPadding="2dp"
+        app:iconTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

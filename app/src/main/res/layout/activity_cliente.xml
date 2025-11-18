@@ -68,6 +68,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Agregar a YOAPRENDO"
+                android:textColor="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:textSize="20sp"
                 app:backgroundTint="#009688"
                 app:cornerRadius="12dp" />
