@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">HelloWorld1</string>
+    <string name="app_name">HelloWorld!</string>
     <string name="HolaMundo">Hola Mundo!</string>
     <string name="BotonCliente">Ventana cliente!</string>
     <string name="TextoAgregar">Agregar Datos nuestra BBDD YOAPRENDO \n</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="agregar_a_yoaprendo">Agregar a YOAPRENDO</string>
+
 </resources>
