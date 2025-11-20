@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,8 +69,9 @@ public class ClienteActivity extends AppCompatActivity {
 
                     if (conex != null) {
                         Log.d(TAG, "¡Conexión a la base de datos exitosa!");
-                        //Toast.makeText(ClienteActivity.this, "¡Conexión a la base de datos exitosa!", Toast.LENGTH_SHORT).show();
 
+                        //Toast.makeText(ClienteActivity.this, "¡Conexión a la base de datos exitosa!", Toast.LENGTH_SHORT).show();
+                        //runOnUiThread(() -> Toast.makeText(ClienteActivity.this, "¡Conexión a la base de datos exitosa!", Toast.LENGTH_SHORT).show());
 
                         // usamos PreparedStatement para seguridad y eficiencia
                         String sqlInsert = "INSERT INTO CLIENTE (nombre, apellido) VALUES (?, ?)";
@@ -80,6 +82,7 @@ public class ClienteActivity extends AppCompatActivity {
                         // comprobamos si se ha actualizado
                         int fAfectadas = prepStatement.executeUpdate();
                         Log.d(TAG, "INSERT correcto: " + fAfectadas);
+                        runOnUiThread(() -> Toast.makeText(ClienteActivity.this, "Actualizada BBDD", Toast.LENGTH_SHORT).show());
 
                         // cerramos los recursos
                         prepStatement.close();
@@ -88,6 +91,8 @@ public class ClienteActivity extends AppCompatActivity {
                     } else {
                         Log.e(TAG, "Fallo al conectar a la base de datos.");
                         //Toast.makeText(ClienteActivity.this, "Fallo al conectar la BBDD", Toast.LENGTH_SHORT).show();
+
+
                     }
 
                 } catch (SQLException e) {
